@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "DocumentUploadedEvent",
+  "namespace": "com.educationloan.events",
+  "fields": [
+    { "name": "documentId", "type": "long" },
+    { "name": "applicantId", "type": "long" },
+    { "name": "documentType", "type": "string" },
+    { "name": "fileUrl", "type": "string" },
+    { "name": "uploadedAt", "type": "string" }
+  ]
+}
