@@ -25,6 +25,7 @@ jobs:
 
       - name: Make Maven Wrapper Executable
         run: chmod +x mvnw
+        working-directory: eligibility-service
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
