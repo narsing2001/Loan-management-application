@@ -1,0 +1,8 @@
+2026-04-09 12:41:34 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=982ms
+2026-04-09 12:41:35 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/login | IP=127.0.0.1 | status=200 | time=1124ms
+2026-04-09 12:41:36 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=406ms
+2026-04-09 12:41:36 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/refresh1 | IP=127.0.0.1 | status=200 | time=20ms
+2026-04-09 12:41:36 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=393ms
+2026-04-09 12:41:36 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/login | IP=127.0.0.1 | status=401 | time=7ms
+2026-04-09 12:41:37 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=389ms
+2026-04-09 12:41:37 INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=409 | time=12ms

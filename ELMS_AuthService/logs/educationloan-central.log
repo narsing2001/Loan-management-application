@@ -1,0 +1,497 @@
+2026-04-09 12:41:05 [main] INFO  c.e.e.EducationloanApplicationTests - Starting EducationloanApplicationTests using Java 23.0.2 with PID 1672 (started by Narsing Patil in D:\eduauth\ELMS_AuthService)
+2026-04-09 12:41:05 [main] INFO  c.e.e.EducationloanApplicationTests - The following 1 profile is active: "test"
+2026-04-09 12:41:15 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09 12:41:15 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@4d3a80e8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@66820996)
+2026-04-09 12:41:15 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@58641d11) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@93fb5bc)
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-04-09 12:41:22 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-04-09 12:41:22 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-04-09 12:41:22 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-04-09 12:41:25 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-09 12:41:26 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-09 12:41:28 [main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:28 [main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
+2026-04-09 12:41:28 [main] INFO  c.e.e.EducationloanApplicationTests - Started EducationloanApplicationTests in 25.094 seconds (process running for 50.509)
+2026-04-09 12:41:28 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:28 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:28 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:28 [main] INFO  c.e.e.config.RoleInitializer - Available roles are loading in roles database..................................................
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:28 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:29 [main] INFO  c.e.e.config.RoleInitializer - all Available roles are Successfully loaded in the roles database...............................!!!
+2026-04-09 12:41:29 [main] DEBUG org.hibernate.SQL - select count(*) from users u1_0
+2026-04-09 12:41:29 [main] INFO  c.e.e.EducationloanApplicationTests$EndToEndIntegrationTests - Starting EducationloanApplicationTests.EndToEndIntegrationTests using Java 23.0.2 with PID 1672 (started by Narsing Patil in D:\eduauth\ELMS_AuthService)
+2026-04-09 12:41:29 [main] INFO  c.e.e.EducationloanApplicationTests$EndToEndIntegrationTests - The following 1 profile is active: "test"
+2026-04-09 12:41:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09 12:41:30 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@5c5f54e2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1bcf6212)
+2026-04-09 12:41:30 [main] DEBUG o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@56f861a4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@163d707f)
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - RateLimitingInterceptor for Token Bucket is ready.................................................
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - enabled               = true
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - general capacity      = 5/min
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - login capacity        = 5/min
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - register capacity     = 3/min
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - get-user capacity     = 5/min
+2026-04-09 12:41:31 [main] INFO  c.e.e.i.RateLimitingTokenBucketInterceptor - =================================================================================================
+2026-04-09 12:41:31 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-04-09 12:41:31 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-04-09 12:41:32 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-09 12:41:33 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-09 12:41:33 [main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:33 [main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
+2026-04-09 12:41:33 [main] INFO  c.e.e.EducationloanApplicationTests$EndToEndIntegrationTests - Started EducationloanApplicationTests.EndToEndIntegrationTests in 3.658 seconds (process running for 55.666)
+2026-04-09 12:41:33 [main] INFO  c.e.e.config.RoleInitializer - Available roles are loading in roles database..................................................
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:33 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:33 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:33 [main] INFO  c.e.e.config.RoleInitializer - all Available roles are Successfully loaded in the roles database...............................!!!
+2026-04-09 12:41:33 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/register
+2026-04-09 12:41:33 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:33 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/register
+2026-04-09 12:41:33 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:33 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/register | username=Login
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? fetch first ? rows only
+2026-04-09 12:41:33 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - insert into users (created_at,email,first_name,is_active,is_email_verified,last_name,password,updated_at,username) values (?,?,?,?,?,?,?,?,?)
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - insert into user_roles (assigned_at,assigned_by,role_id,user_id) values (?,?,?,?)
+2026-04-09 12:41:34 [main] INFO  c.e.e.service.UserService - User login_test_2414 with email logintest@test.com created successfully
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,r1_0.role_id,r1_0.role_name,u1_0.username from users u1_0 left join user_roles ur1_0 on u1_0.id=ur1_0.user_id left join roles r1_0 on r1_0.role_id=ur1_0.role_id where u1_0.id=?
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:34 [main] INFO  c.e.e.security.jwt.AuthService - User 'login_test_2414' registered successfully
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - Operation   : REGISTER
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Username                  | login_test_2414                  |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:34              |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:34              |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=login_test_2414 | tokenType=Bearer | accessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:34 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:34 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=982ms
+2026-04-09 12:41:34 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 986ms | Status: 200
+2026-04-09 12:41:34 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/login
+2026-04-09 12:41:34 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:34 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/login
+2026-04-09 12:41:34 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 127.0.0.1
+2026-04-09 12:41:34 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/login | usernameOrEmail=logintest@test.com
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=? or u1_0.email=?
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:34 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,r1_0.role_id,r1_0.role_name,u1_0.username from users u1_0 left join user_roles ur1_0 on u1_0.id=ur1_0.user_id left join roles r1_0 on r1_0.role_id=ur1_0.role_id where u1_0.email=?
+2026-04-09 12:41:35 [main] DEBUG o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-04-09 12:41:35 [main] INFO  c.e.e.security.jwt.AuthService - User 'login_test_2414' logged in successfully
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - Operation   : LOGIN
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Username                  | login_test_2414                  |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:35              |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:35              |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=login_test_2414 | tokenType=Bearer | accessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:35 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-04-09 12:41:35 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/login | IP=127.0.0.1 | status=200 | time=1124ms
+2026-04-09 12:41:35 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1124ms | Status: 200
+2026-04-09 12:41:35 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/register
+2026-04-09 12:41:35 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:35 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/register
+2026-04-09 12:41:35 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:35 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/register | username=Refresh
+2026-04-09 12:41:35 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:35 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:35 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? fetch first ? rows only
+2026-04-09 12:41:35 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - insert into users (created_at,email,first_name,is_active,is_email_verified,last_name,password,updated_at,username) values (?,?,?,?,?,?,?,?,?)
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - insert into user_roles (assigned_at,assigned_by,role_id,user_id) values (?,?,?,?)
+2026-04-09 12:41:36 [main] INFO  c.e.e.service.UserService - User refresh_test_2377 with email refreshtest@test.com created successfully
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,r1_0.role_id,r1_0.role_name,u1_0.username from users u1_0 left join user_roles ur1_0 on u1_0.id=ur1_0.user_id left join roles r1_0 on r1_0.role_id=ur1_0.role_id where u1_0.id=?
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:36 [main] INFO  c.e.e.security.jwt.AuthService - User 'refresh_test_2377' registered successfully
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - Operation   : REGISTER
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Username                  | refresh_test_2377                |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=refresh_test_2377 | tokenType=Bearer | accessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=406ms
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 406ms | Status: 200
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/refresh1
+2026-04-09 12:41:36 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/refresh1
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/refresh1 | IP: 127.0.0.1
+2026-04-09 12:41:36 [main] DEBUG c.e.e.i.RateLimitingTokenBucketInterceptor - Token Allowed | IP: 127.0.0.1 | URL: /api/v1/auth/refresh1 | Tokens left: 4
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/refresh | Token refresh initiated
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:36 [main] INFO  c.e.e.security.jwt.AuthService - Access token refreshed for user 'refresh_test_2377'
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - Operation   : REFRESH_TOKEN
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Username                  | refresh_test_2377                |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=refresh_test_2377 | tokenType=Bearer | newAccessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/refresh1 | Status: 200
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/refresh1 | IP=127.0.0.1 | status=200 | time=20ms
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/refresh1 | Time: 54ms | Status: 200
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/register
+2026-04-09 12:41:36 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/register
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/register | username=Integration
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - insert into users (created_at,email,first_name,is_active,is_email_verified,last_name,password,updated_at,username) values (?,?,?,?,?,?,?,?,?)
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - insert into user_roles (assigned_at,assigned_by,role_id,user_id) values (?,?,?,?)
+2026-04-09 12:41:36 [main] INFO  c.e.e.service.UserService - User integration_test_7535 with email integration@test.com created successfully
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,r1_0.role_id,r1_0.role_name,u1_0.username from users u1_0 left join user_roles ur1_0 on u1_0.id=ur1_0.user_id left join roles r1_0 on r1_0.role_id=ur1_0.role_id where u1_0.id=?
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:36 [main] INFO  c.e.e.security.jwt.AuthService - User 'integration_test_7535' registered successfully
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - Operation   : REGISTER
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Username                  | integration_test_7535            |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:36              |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=integration_test_7535 | tokenType=Bearer | accessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=393ms
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 473ms | Status: 200
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/login
+2026-04-09 12:41:36 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/login
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 127.0.0.1
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/login | usernameOrEmail=nonexistent@user.com
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=? or u1_0.email=?
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/login | IP=127.0.0.1 | status=401 | time=7ms
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 7ms | Status: 401
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/register
+2026-04-09 12:41:36 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:36 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/register
+2026-04-09 12:41:36 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:36 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/register | username=Duplicate
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? fetch first ? rows only
+2026-04-09 12:41:36 [main] DEBUG org.hibernate.SQL - select r1_0.role_id,r1_0.role_name from roles r1_0 where r1_0.role_name=?
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - insert into users (created_at,email,first_name,is_active,is_email_verified,last_name,password,updated_at,username) values (?,?,?,?,?,?,?,?,?)
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - insert into user_roles (assigned_at,assigned_by,role_id,user_id) values (?,?,?,?)
+2026-04-09 12:41:37 [main] INFO  c.e.e.service.UserService - User duplicate_test_6974 with email duplicate@test.com created successfully
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,ur1_0.user_id,ur1_0.id,ur1_0.assigned_at,ur1_0.assigned_by,ur1_0.role_id,r1_0.role_id,r1_0.role_name,u1_0.username from users u1_0 left join user_roles ur1_0 on u1_0.id=ur1_0.user_id left join roles r1_0 on r1_0.role_id=ur1_0.role_id where u1_0.id=?
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.first_name,u1_0.is_active,u1_0.is_email_verified,u1_0.last_name,u1_0.password,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-04-09 12:41:37 [main] INFO  c.e.e.security.jwt.AuthService - User 'duplicate_test_6974' registered successfully
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - Operation   : REGISTER
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Field                     | Value                            |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Username                  | duplicate_test_6974              |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Token Type                | Bearer                           |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Access Token              | abstract                         |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Refresh Token             | abstract                         |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Access  Expires At        | 2026-04-09T15:11:37              |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Access  Expires In        | 8999 sec                         |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires At        | 2026-04-16T12:41:37              |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - | Refresh Expires In        | 604799 sec                       |
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - +---------------------------+----------------------------------+
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - RESPONSE : 200 OK | username=duplicate_test_6974 | tokenType=Bearer | accessExpiresIn=8999sec | refreshExpiresIn=604799sec
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=200 | time=389ms
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 389ms | Status: 200
+2026-04-09 12:41:37 [main] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/auth/register
+2026-04-09 12:41:37 [main] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 12:41:37 [main] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/auth/register
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:37 [main] INFO  c.e.e.controller.AuthController - REQUEST  : POST /api/v1/auth/register | username=Duplicate
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-04-09 12:41:37 [main] DEBUG org.hibernate.SQL - select u1_0.id from users u1_0 where u1_0.email=? fetch first ? rows only
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.AuditLoggingInterceptor - [AUDIT] user=anonymous | POST /api/v1/auth/register | IP=127.0.0.1 | status=409 | time=12ms
+2026-04-09 12:41:37 [main] INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 12ms | Status: 409
+2026-04-09 12:41:37 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:37 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:37 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:38 [DiscoveryClient-CacheRefreshExecutor-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:38 [DiscoveryClient-HeartbeatExecutor-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:38 [DiscoveryClient-HeartbeatExecutor-%d] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1402)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:40 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:40 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:735)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:692)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1401)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:651)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1394)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:40 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:40 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:40 [DiscoveryClient-InstanceInfoReplicator-%d] WARN  c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2026-04-09 12:41:40 [SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2026-04-09 12:41:40 [SpringApplicationShutdownHook] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_EDUCATIONLOAN/DESKTOP-ON1MEVN:educationloan:8081 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:735)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:692)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1401)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:651)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1394)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1219)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1180)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1126)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1575)

@@ -1,0 +1,214 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > InternationalLoanStrategy</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.LoanTypeStrategyInterest.strategy</a>
+</div>
+
+<h1>Coverage Summary for Class: InternationalLoanStrategy (com.example.LoanTypeStrategyInterest.strategy)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InternationalLoanStrategy</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    20%
+  </span>
+  <span class="absValue">
+    (2/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    35.5%
+  </span>
+  <span class="absValue">
+    (11/31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.LoanTypeStrategyInterest.strategy;
+&nbsp;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.UserApplicationRequestDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.entity.entity1.UserApplicationDetail;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.CoursesDomain;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.LoanType;
+&nbsp;import com.example.LoanTypeStrategyInterest.exception.InvalidTenureYearException;
+&nbsp;import lombok.extern.slf4j.Slf4j;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;import java.math.BigDecimal;
+&nbsp;import java.math.RoundingMode;
+&nbsp;import java.util.concurrent.ThreadLocalRandom;
+<b class="fc">&nbsp;@Slf4j</b>
+&nbsp;@Service(&quot;internationalLoanStrategy&quot;)
+<b class="fc">&nbsp;public class InternationalLoanStrategy implements InterestStrategy{</b>
+&nbsp;
+<b class="fc">&nbsp;   private static final BigDecimal MIN_RATE=new BigDecimal(&quot;12.00&quot;);</b>
+<b class="fc">&nbsp;   private static final BigDecimal MAX_RATE=new BigDecimal(&quot;15.00&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_MAX_LOAN_AMOUNT  = new BigDecimal(&quot;15000000&quot;);</b>
+&nbsp;    private static final int        INTERNATIONAL_MAX_TENURE_YEARS = 20;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_TUITION_EXPENSE             = new BigDecimal(&quot;0.60&quot;);</b>
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_ACCOMMODATION_EXPENSE       = new BigDecimal(&quot;0.15&quot;);</b>
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_TRAVEL_EXPENSE              = new BigDecimal(&quot;0.10&quot;);</b>
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_LAPTOP_EXPENSE              = new BigDecimal(&quot;0.05&quot;);</b>
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_EXAM_FEE_EXPENSE            = new BigDecimal(&quot;0.05&quot;);</b>
+<b class="fc">&nbsp;    private static final BigDecimal INTERNATIONAL_OTHER_EXPENSE               = new BigDecimal(&quot;0.05&quot;);</b>
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public BigDecimal findInterestRate(UserApplicationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        double randomRate= ThreadLocalRandom.current().nextDouble(MIN_RATE.doubleValue(),MAX_RATE.doubleValue()+0.01);</b>
+<b class="nc">&nbsp;        BigDecimal rate=BigDecimal.valueOf(randomRate).setScale(2,RoundingMode.HALF_UP);</b>
+&nbsp;      /*
+&nbsp;        if (requestDTO.getGender() == Gender.FEMALE) {
+&nbsp;            rate = rate.subtract(FEMALE_DISCOUNT);
+&nbsp;            if (rate.compareTo(MIN_RATE) &lt; 0) {
+&nbsp;                rate = MIN_RATE;
+&nbsp;            }
+&nbsp;        }
+&nbsp;      */
+<b class="nc">&nbsp;        return rate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public BigDecimal getMaxLoanAmount(UserApplicationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        return INTERNATIONAL_MAX_LOAN_AMOUNT;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int getMaxTenureYears(int TenureYears) {
+<b class="nc">&nbsp;        if(TenureYears&gt;INTERNATIONAL_MAX_TENURE_YEARS){</b>
+<b class="nc">&nbsp;            throw new InvalidTenureYearException(&quot;tenure year must be less than or equalTo: &quot;+INTERNATIONAL_MAX_TENURE_YEARS+&quot; for the International education Loan&quot;);</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return TenureYears;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void validatePreConditions(UserApplicationRequestDTO requestDTO) {
+&nbsp;//        if (!requestDTO.isInstitutionApproved()) {
+&nbsp;//            throw new InstituteNotApprovedException(&quot;loan request for current International foreign University under current policy is not valid.&quot;);
+&nbsp;//        }
+&nbsp;//        if(!requestDTO.isAdmissionLetterVerified()){
+&nbsp;//            throw new AdmissionLetterVerificationException(&quot;your admission letter for international education loan verification is pending&quot;);
+&nbsp;//        }
+<b class="nc">&nbsp;        log.info(&quot;Dear Applicant, International Education Loan for ApplicationId:{}, InstituteApprovedStatus:{}, AdmissionLetterVerified:{}&quot;,requestDTO.getId(),requestDTO.isInstitutionApproved(),requestDTO.isAdmissionLetterVerified());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void totalCoverage(UserApplicationRequestDTO requestDTO, UserApplicationDetail userApplicationDetail) {
+<b class="nc">&nbsp;        BigDecimal baseAmount=userApplicationDetail.getApprovedAmount();</b>
+<b class="nc">&nbsp;        userApplicationDetail.setTuitionFeeCoverage(Ratio(userApplicationDetail.getTuitionFeeCoverage(),baseAmount,INTERNATIONAL_TUITION_EXPENSE));</b>
+<b class="nc">&nbsp;        userApplicationDetail.setAccommodationCoverage(Ratio(userApplicationDetail.getAccommodationCoverage(),baseAmount,INTERNATIONAL_ACCOMMODATION_EXPENSE));</b>
+<b class="nc">&nbsp;        userApplicationDetail.setTravelExpenseCoverage(Ratio(userApplicationDetail.getTravelExpenseCoverage(),baseAmount,INTERNATIONAL_TRAVEL_EXPENSE));</b>
+<b class="nc">&nbsp;        userApplicationDetail.setLaptopExpenseCoverage(Ratio(userApplicationDetail.getLaptopExpenseCoverage(),baseAmount,INTERNATIONAL_LAPTOP_EXPENSE));</b>
+<b class="nc">&nbsp;        userApplicationDetail.setExamFeeCoverage(Ratio(userApplicationDetail.getExamFeeCoverage(),baseAmount,INTERNATIONAL_EXAM_FEE_EXPENSE));</b>
+<b class="nc">&nbsp;        userApplicationDetail.setOtherExpenseCoverage(Ratio(userApplicationDetail.getOtherExpenseCoverage(),baseAmount,INTERNATIONAL_OTHER_EXPENSE));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public LoanType getSupportedLoanType(UserApplicationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        return LoanType.INTERNATIONAL;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public CoursesDomain getCourseType(UserApplicationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        return requestDTO.getInternationalCourseType();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private BigDecimal Ratio(BigDecimal expenses,BigDecimal baseAmt,BigDecimal topicExpenseRate){
+<b class="nc">&nbsp;        if(expenses!=null &amp;&amp; expenses.compareTo(BigDecimal.ZERO)&gt;0){</b>
+<b class="nc">&nbsp;            return expenses.setScale(2, RoundingMode.HALF_UP);</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return baseAmt.multiply(topicExpenseRate).setScale(2,RoundingMode.HALF_UP);</b>
+&nbsp;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-09 12:15</div>
+</div>
+</body>
+</html>

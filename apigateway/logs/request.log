@@ -1,0 +1,178 @@
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 24ms | Status: 200
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-04-11 12:06:18 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 321ms | Status: 200
+2026-04-11 12:06:18 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-04-11 12:06:18 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 694ms | Status: 200
+2026-04-11 12:06:18 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-04-11 12:06:18 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 723ms | Status: 200
+2026-04-11 12:06:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /LoginRegister.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /LoginRegister.html | Status: 200
+2026-04-11 12:06:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /LoginRegister.html | Time: 29ms | Status: 200
+2026-04-11 12:06:34 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:34 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 773ms | Status: 401
+2026-04-11 12:06:45 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:06:45 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 44ms | Status: 401
+2026-04-11 12:07:06 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:07:06 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 17ms | Status: 401
+2026-04-11 12:14:39 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:14:43 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-11 12:14:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 4525ms | Status: 200
+2026-04-11 12:14:53 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:14:53 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 46ms | Status: 401
+2026-04-11 12:15:13 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 2751ms | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /index.html | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /index.html | Time: 25ms | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 80ms | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 175ms | Status: 200
+2026-04-11 12:15:16 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 179ms | Status: 200
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 13ms | Status: 200
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-04-11 12:15:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 92ms | Status: 200
+2026-04-11 12:15:37 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-04-11 12:15:37 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 163ms | Status: 200
+2026-04-11 12:15:37 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-04-11 12:15:37 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 266ms | Status: 200
+2026-04-11 12:27:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /report-all3.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:27:43 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /report-all3.html | Status: 200
+2026-04-11 12:27:43 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /report-all3.html | Time: 67ms | Status: 200
+2026-04-11 12:27:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/auth-summary-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:27:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/users-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:27:43 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api/v1/reports/user-roles-data | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/auth-summary-data | Status: 200
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/auth-summary-data | Time: 486ms | Status: 200
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/users-data | Status: 200
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/users-data | Time: 787ms | Status: 200
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/reports/user-roles-data | Status: 200
+2026-04-11 12:27:44 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/reports/user-roles-data | Time: 847ms | Status: 200
+2026-04-11 12:28:05 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:05 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.html | Status: 200
+2026-04-11 12:28:05 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.html | Time: 38ms | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-bundle.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-standalone-preset.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-initializer.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui.css | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.css | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.css | Time: 310ms | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui.css | Time: 311ms | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-initializer.js | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-standalone-preset.js | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-standalone-preset.js | Time: 368ms | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-initializer.js | Time: 366ms | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-bundle.js | Status: 200
+2026-04-11 12:28:10 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-bundle.js | Time: 446ms | Status: 200
+2026-04-11 12:28:17 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/favicon-32x32.png | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:17 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/favicon-32x32.png | Status: 200
+2026-04-11 12:28:17 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/favicon-32x32.png | Time: 0ms | Status: 200
+2026-04-11 12:28:19 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:19 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.html | Status: 200
+2026-04-11 12:28:19 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.html | Time: 16ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-bundle.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-standalone-preset.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-initializer.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.css | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.css | Time: 71ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-standalone-preset.js | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-standalone-preset.js | Time: 134ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-initializer.js | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui.css | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui.css | Time: 132ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-initializer.js | Time: 120ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-bundle.js | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-bundle.js | Time: 309ms | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/favicon-32x32.png | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/favicon-32x32.png | Status: 200
+2026-04-11 12:28:20 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/favicon-32x32.png | Time: 5ms | Status: 200
+2026-04-11 12:35:12 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:13 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.html | Status: 200
+2026-04-11 12:35:13 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.html | Time: 1325ms | Status: 200
+2026-04-11 12:35:13 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-bundle.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-standalone-preset.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-initializer.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-bundle.js | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-standalone-preset.js | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-standalone-preset.js | Time: 399ms | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-bundle.js | Time: 401ms | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui.css | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui.css | Time: 409ms | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-initializer.js | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-initializer.js | Time: 613ms | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.css | Status: 200
+2026-04-11 12:35:14 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.css | Time: 968ms | Status: 200
+2026-04-11 12:35:15 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/favicon-32x32.png | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:15 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/favicon-32x32.png | Status: 200
+2026-04-11 12:35:15 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/favicon-32x32.png | Time: 42ms | Status: 200
+2026-04-11 12:35:24 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/api-docs/ | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:38 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/api-docs/ | Time: 13632ms | Status: 500
+2026-04-11 12:35:49 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/api-docs/ | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:35:49 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/api-docs/ | Time: 325ms | Status: 500
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui.html | Status: 302
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui.html | Time: 40ms | Status: 302
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.html | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.html | Time: 6ms | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-initializer.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-standalone-preset.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-bundle.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.css | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.css | Time: 5ms | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui.css | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui.css | Time: 8ms | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-standalone-preset.js | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-standalone-preset.js | Time: 11ms | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-initializer.js | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-initializer.js | Time: 37ms | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-bundle.js | Status: 200
+2026-04-11 12:46:27 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-bundle.js | Time: 44ms | Status: 200
+2026-04-11 12:46:40 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:46:40 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui | Time: 20ms | Status: 500
+2026-04-11 12:47:02 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /api-docs | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:47:02 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api-docs | Time: 475ms | Status: 500
+2026-04-11 12:56:41 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.html | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:41 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.html | Status: 200
+2026-04-11 12:56:41 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.html | Time: 34ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-initializer.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/index.css | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-bundle.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/swagger-ui-standalone-preset.js | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/index.css | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/index.css | Time: 5ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui.css | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui.css | Time: 14ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-standalone-preset.js | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-standalone-preset.js | Time: 21ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-initializer.js | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-initializer.js | Time: 31ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/swagger-ui-bundle.js | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/swagger-ui-bundle.js | Time: 55ms | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: GET | URL: /swagger-ui/favicon-32x32.png | IP: 0:0:0:0:0:0:0:1
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /swagger-ui/favicon-32x32.png | Status: 200
+2026-04-11 12:56:42 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /swagger-ui/favicon-32x32.png | Time: 6ms | Status: 200

@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LoanInterestCalculationService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.LoanTypeStrategyInterest.service.serv1</a>
+</div>
+
+<h1>Coverage Summary for Class: LoanInterestCalculationService (com.example.LoanTypeStrategyInterest.service.serv1)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoanInterestCalculationService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (1/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (2/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.LoanTypeStrategyInterest.service.serv1;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationRequestDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationResponseDTO;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class LoanInterestCalculationService {
+&nbsp;
+&nbsp;    private final InterestRateCalculationService interestRateCalculationService;
+&nbsp;
+<b class="fc">&nbsp;    public LoanInterestCalculationService(InterestRateCalculationService interestRateCalculationService) {</b>
+<b class="fc">&nbsp;        this.interestRateCalculationService = interestRateCalculationService;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Compute loan interest rate directly from request DTO
+&nbsp;     */
+&nbsp;    public InterestRateCalculationResponseDTO computeLoanInterestRate(InterestRateCalculationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO response = interestRateCalculationService.calculateInterestRate(requestDTO);</b>
+<b class="nc">&nbsp;        response.setCalculationMethod(&quot;Computed using LoanInterestCalculationService | Method: Newton-Raphson&quot;);</b>
+<b class="nc">&nbsp;        return response;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Compute loan interest rate using Binary Search
+&nbsp;     */
+&nbsp;    public InterestRateCalculationResponseDTO computeLoanInterestRateBinary(InterestRateCalculationRequestDTO requestDTO) {
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO response = interestRateCalculationService.calculateInterestRateBinarySearch(requestDTO);</b>
+<b class="nc">&nbsp;        response.setCalculationMethod(&quot;Computed using LoanInterestCalculationService | Method: Binary Search&quot;);</b>
+<b class="nc">&nbsp;        return response;</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;/*
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationRequestDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationResponseDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.UserApplicationRequestDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.UserApplicationResponseDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.factory.StrategyFactory;
+&nbsp;import com.example.LoanTypeStrategyInterest.strategy.InterestStrategy;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;
+&nbsp;@Service
+&nbsp;public class LoanInterestCalculationService {
+&nbsp;    private final StrategyFactory strategyFactory;
+&nbsp;    private final InterestRateCalculationService interestRateCalculationService;
+&nbsp;    private final UserApplicationDetailService userApplicationDetailService;
+&nbsp;
+&nbsp;    public LoanInterestCalculationService(StrategyFactory strategyFactory, InterestRateCalculationService interestRateCalculationService, UserApplicationDetailService userApplicationDetailService) {
+&nbsp;        this.strategyFactory = strategyFactory;
+&nbsp;        this.interestRateCalculationService = interestRateCalculationService;
+&nbsp;        this.userApplicationDetailService = userApplicationDetailService;
+&nbsp;    }
+&nbsp;
+&nbsp;    public InterestRateCalculationResponseDTO computeLoanInterestRate(UserApplicationRequestDTO userApplicationRequestDTO) {
+&nbsp;        InterestStrategy strategy = strategyFactory.getStrategy(userApplicationRequestDTO.getLoanType());
+&nbsp;        BigDecimal rate = strategy.findInterestRate(userApplicationRequestDTO);
+&nbsp;        UserApplicationResponseDTO userApplicationResponseDTO=userApplicationDetailService.applyLoan(userApplicationRequestDTO);
+&nbsp;
+&nbsp;        InterestRateCalculationRequestDTO emiRequest = InterestRateCalculationRequestDTO.builder()
+&nbsp;                .approvedAmount(strategy.getMaxLoanAmount(userApplicationRequestDTO))
+&nbsp;                .monthlyEmi(userApplicationResponseDTO.getMonthlyEmi())
+&nbsp;                .tenureYears(strategy.getMaxTenureYears(userApplicationRequestDTO.getTenureYears()))
+&nbsp;                .build();
+&nbsp;
+&nbsp;        InterestRateCalculationResponseDTO emiResponse = interestRateCalculationService.calculateInterestRate(emiRequest);
+&nbsp;        emiResponse.setCalculationMethod(&quot;LoanType: &quot; + strategy.getSupportedLoanType() + &quot; | Rate applied: &quot; + rate + &quot;%&quot;);
+&nbsp;        return emiResponse;
+&nbsp;    }
+&nbsp;}
+&nbsp; */
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-09 12:15</div>
+</div>
+</body>
+</html>

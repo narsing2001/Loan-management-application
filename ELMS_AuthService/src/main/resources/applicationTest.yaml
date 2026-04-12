@@ -1,0 +1,88 @@
+
+server:
+  port: 0
+  error:
+    include-message: always
+    include-binding-errors: always
+
+
+spring:
+  application:
+    name: educationloan-test
+
+
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-timeout: 10000
+
+
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+  h2:
+    console:
+      enabled: false
+
+  cloud:
+    discovery:
+      enabled: false
+    config:
+      enabled: false
+
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
+
+
+app:
+  jwt:
+    secret: testSecretKeyForJWTTokenGenerationInTestEnvironment123456789ABCDEF
+    access-token-expiration-ms: 3600000
+    refresh-token-expiration-ms: 86400000
+
+
+  interceptor:
+    request-logging:
+      enabled: false
+    rate-limiting:
+      token-bucket:
+        enabled: false
+    token-expiry:
+      enabled: true
+    audit-logging:
+      enabled: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+
+logging:
+  level:
+    root: WARN
+    com.example.educationloan: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.springframework.cloud: ERROR
+    com.netflix: ERROR

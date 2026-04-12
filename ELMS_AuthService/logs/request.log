@@ -1,0 +1,22 @@
+2026-04-09 12:41:33 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:34 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:34 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 986ms | Status: 200
+2026-04-09 12:41:34 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 127.0.0.1
+2026-04-09 12:41:35 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/login | Status: 200
+2026-04-09 12:41:35 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 1124ms | Status: 200
+2026-04-09 12:41:35 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 406ms | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/refresh1 | IP: 127.0.0.1
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/refresh1 | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/refresh1 | Time: 54ms | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 473ms | Status: 200
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/login | IP: 127.0.0.1
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/login | Time: 7ms | Status: 401
+2026-04-09 12:41:36 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:37 INFO  c.e.e.i.RequestLoggingInterceptor - Post-Handle -> Response Sent | URL: /api/v1/auth/register | Status: 200
+2026-04-09 12:41:37 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 389ms | Status: 200
+2026-04-09 12:41:37 INFO  c.e.e.i.RequestLoggingInterceptor - Pre-Handle <- Incoming Request | Method: POST | URL: /api/v1/auth/register | IP: 127.0.0.1
+2026-04-09 12:41:37 INFO  c.e.e.i.RequestLoggingInterceptor - after-Completion - Request Complete  | URL: /api/v1/auth/register | Time: 12ms | Status: 409

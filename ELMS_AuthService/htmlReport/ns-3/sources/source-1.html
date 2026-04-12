@@ -1,0 +1,208 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LoanInterestRateController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.LoanTypeStrategyInterest.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: LoanInterestRateController (com.example.LoanTypeStrategyInterest.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoanInterestRateController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (2/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    10.5%
+  </span>
+  <span class="absValue">
+    (2/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.LoanTypeStrategyInterest.controller;
+&nbsp;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationRequestDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.InterestRateCalculationResponseDTO;
+&nbsp;import com.example.LoanTypeStrategyInterest.exception.InvalidLoanParameterException;
+&nbsp;import com.example.LoanTypeStrategyInterest.service.serv1.InterestRateCalculationService;
+&nbsp;import com.example.LoanTypeStrategyInterest.service.serv1.LoanInterestCalculationService;
+&nbsp;import io.swagger.v3.oas.annotations.Operation;
+&nbsp;import io.swagger.v3.oas.annotations.Parameter;
+&nbsp;import io.swagger.v3.oas.annotations.media.Content;
+&nbsp;import io.swagger.v3.oas.annotations.media.Schema;
+&nbsp;import io.swagger.v3.oas.annotations.responses.ApiResponse;
+&nbsp;import io.swagger.v3.oas.annotations.responses.ApiResponses;
+&nbsp;import io.swagger.v3.oas.annotations.tags.Tag;
+&nbsp;import jakarta.validation.Valid;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import lombok.extern.slf4j.Slf4j;
+&nbsp;
+&nbsp;import org.springframework.http.MediaType;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/api/v1/interest&quot;)
+<b class="fc">&nbsp;@RequiredArgsConstructor</b>
+<b class="fc">&nbsp;@Slf4j</b>
+&nbsp;@Tag(name = &quot;Loan Interest Calculator&quot;,
+&nbsp;        description = &quot;APIs for calculating loan interest rates&quot;)
+&nbsp;public class LoanInterestRateController {
+&nbsp;
+&nbsp;    private final LoanInterestCalculationService loanInterestCalculationService;
+&nbsp;    private final InterestRateCalculationService interestRateCalculationService;
+&nbsp;
+&nbsp;    // LCS----------------------------------------------------------------------------------------
+&nbsp;    @PostMapping(value = &quot;/calculate-with-strategy&quot;,
+&nbsp;            produces = MediaType.APPLICATION_JSON_VALUE,
+&nbsp;            consumes = MediaType.APPLICATION_JSON_VALUE
+&nbsp;    )
+&nbsp;    @Operation(summary = &quot;Calculate interest rate using loan type strategy&quot;,
+&nbsp;            description = &quot;Calculates interest rate based on loan type, applicant details, and EMI using strategy pattern&quot;)
+&nbsp;    @ApiResponses(value = {
+&nbsp;            @ApiResponse(
+&nbsp;                    responseCode = &quot;200&quot;,
+&nbsp;                    description = &quot;Interest rate calculated successfully&quot;,
+&nbsp;                    content = @Content(
+&nbsp;                            mediaType = MediaType.APPLICATION_JSON_VALUE,
+&nbsp;                            schema = @Schema(implementation = InterestRateCalculationResponseDTO.class)
+&nbsp;                    )
+&nbsp;            ),
+&nbsp;            @ApiResponse(
+&nbsp;                    responseCode = &quot;400&quot;,
+&nbsp;                    description = &quot;Invalid request parameters or validation error&quot;,
+&nbsp;                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
+&nbsp;            ),
+&nbsp;            @ApiResponse(
+&nbsp;                    responseCode = &quot;500&quot;,
+&nbsp;                    description = &quot;Internal server error during calculation&quot;,
+&nbsp;                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
+&nbsp;            )
+&nbsp;    })
+&nbsp;    public ResponseEntity&lt;InterestRateCalculationResponseDTO&gt; calculateLoanInterestWithStrategy(
+&nbsp;            @Parameter(
+&nbsp;                    description = &quot;Loan interest calculation request containing loan type, principal amount, EMI, and tenure&quot;,
+&nbsp;                    required = true,
+&nbsp;                    schema = @Schema(implementation = InterestRateCalculationRequestDTO.class)
+&nbsp;            ) @Valid @RequestBody InterestRateCalculationRequestDTO interestRateCalculationRequestDTO) {
+&nbsp;
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO response = loanInterestCalculationService.computeLoanInterestRate(interestRateCalculationRequestDTO);</b>
+<b class="nc">&nbsp;        log.info(&quot;Interest rate calculation completed successfully&quot;);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // NRM---------------------------------------------------------------------------------------------------------------------
+&nbsp;    @PostMapping(value = &quot;/calculate-interest-rate&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+&nbsp;    public ResponseEntity&lt;InterestRateCalculationResponseDTO&gt; calculateInterestRate(
+&nbsp;            @Valid @RequestBody InterestRateCalculationRequestDTO interestRateCalculationRequestDTO) {
+<b class="nc">&nbsp;        log.info(&quot;Received direct interest rate calculation request - Principal: {}, EMI: {}, Tenure: {} years&quot;,</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getApprovedAmount(),</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getMonthlyEmi(),</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getTenureYears());</b>
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO response = interestRateCalculationService.calculateInterestRate(interestRateCalculationRequestDTO);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // BSM--------------------------------------------------------------------------------------------------------------
+&nbsp;    @PostMapping(value = &quot;/calculate-interest-rate-binary&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+&nbsp;    public ResponseEntity&lt;InterestRateCalculationResponseDTO&gt; calculateInterestRateBinarySearch(
+&nbsp;            @Valid @RequestBody InterestRateCalculationRequestDTO interestRateCalculationRequestDTO
+&nbsp;    ) {
+<b class="nc">&nbsp;        log.info(&quot;Received binary search interest rate calculation request - Principal: {}, EMI: {}, Tenure: {} years&quot;,</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getApprovedAmount(),</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getMonthlyEmi(),</b>
+<b class="nc">&nbsp;                interestRateCalculationRequestDTO.getTenureYears());</b>
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO response = interestRateCalculationService.calculateInterestRateBinarySearch(interestRateCalculationRequestDTO);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // HCE---------------------------------------------------------------------------------------------------
+&nbsp;    @GetMapping(value = &quot;/health&quot;, produces = MediaType.TEXT_PLAIN_VALUE)
+&nbsp;    public ResponseEntity&lt;String&gt; healthCheck() {
+<b class="nc">&nbsp;        log.debug(&quot;Health check endpoint called&quot;);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(&quot;Loan Interest Calculation Service is running&quot;);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-09 12:15</div>
+</div>
+</body>
+</html>

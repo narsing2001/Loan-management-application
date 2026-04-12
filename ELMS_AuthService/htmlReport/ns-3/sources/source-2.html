@@ -1,0 +1,194 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > UserApplicationDetailController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.LoanTypeStrategyInterest.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: UserApplicationDetailController (com.example.LoanTypeStrategyInterest.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserApplicationDetailController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    11.1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    4.2%
+  </span>
+  <span class="absValue">
+    (1/24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.LoanTypeStrategyInterest.controller;
+&nbsp;
+&nbsp;
+&nbsp;import com.example.LoanTypeStrategyInterest.dto.dto1.*;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.ApplicationStatus;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.LoanType;
+&nbsp;import com.example.LoanTypeStrategyInterest.response.ApiResponse;
+&nbsp;import com.example.LoanTypeStrategyInterest.service.serv1.InterestRateCalculationService;
+&nbsp;import com.example.LoanTypeStrategyInterest.service.serv1.LoanInterestCalculationService;
+&nbsp;import com.example.LoanTypeStrategyInterest.service.serv1.UserApplicationDetailService;
+&nbsp;import jakarta.validation.Valid;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.UUID;
+&nbsp;
+&nbsp;@RestController
+<b class="fc">&nbsp;@RequiredArgsConstructor</b>
+&nbsp;@RequestMapping(&quot;/api/v1/loans&quot;)
+&nbsp;public class UserApplicationDetailController {
+&nbsp;    private final UserApplicationDetailService userApplicationDetailService;
+&nbsp;    private  final InterestRateCalculationService interestRateCalculationService;
+&nbsp;  //  private  final LoanInterestCalculationService loanInterestCalculationService;
+&nbsp;
+&nbsp;    @PostMapping(&quot;/post/apply&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;UserApplicationResponseDTO&gt;&gt; submitUserApplication(@Valid @RequestBody UserApplicationRequestDTO userApplicationRequestDTO){
+<b class="nc">&nbsp;        UserApplicationResponseDTO applicant=userApplicationDetailService.applyLoan(userApplicationRequestDTO);</b>
+<b class="nc">&nbsp;        ApiResponse&lt;UserApplicationResponseDTO&gt; response=ApiResponse.success(applicant,&quot;Loan application submitted successfully...!&quot;);</b>
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.CREATED).body(response);</b>
+&nbsp;    }
+&nbsp;    @GetMapping(&quot;applicant/getAll&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;List&lt;UserApplicationResponseDTO&gt;&gt;&gt; getAllApplications() {
+<b class="nc">&nbsp;        List&lt;UserApplicationResponseDTO&gt; applications = userApplicationDetailService.getAll();</b>
+<b class="nc">&nbsp;        ApiResponse&lt;List&lt;UserApplicationResponseDTO&gt;&gt; response = ApiResponse.success(applications, &quot;Fetched all loan applications successfully!&quot;);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/status/{status}&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;List&lt;UserApplicationStatusResponseDTO&gt;&gt;&gt;getApplicantByStatus(@PathVariable(&quot;status&quot;)ApplicationStatus status){
+<b class="nc">&nbsp;        List&lt;UserApplicationStatusResponseDTO&gt; applicant=userApplicationDetailService.getByStatus(status);</b>
+<b class="nc">&nbsp;        ApiResponse&lt;List&lt;UserApplicationStatusResponseDTO&gt;&gt; response = ApiResponse.success(applicant,&quot;Fetched Loan application by status successfully..!&quot;);</b>
+<b class="nc">&nbsp;        return  ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/loanType/{loanType}&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;List&lt;UserApplicationStatusResponseDTO&gt;&gt;&gt; getApplicationByLoanType(@PathVariable(&quot;loanType&quot;)LoanType loanType){
+<b class="nc">&nbsp;        List&lt;UserApplicationStatusResponseDTO&gt; applicant =userApplicationDetailService.getByLoanType(loanType);</b>
+<b class="nc">&nbsp;        ApiResponse&lt;List&lt;UserApplicationStatusResponseDTO&gt;&gt; response=ApiResponse.success(applicant,&quot;Fetched Loan application by loanType successfully...!&quot;);</b>
+<b class="nc">&nbsp;        return  ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PatchMapping(&quot;/patch/updateStatus/{id}&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;UserApplicationStatusUpdateResponseDTO&gt;&gt; updateApplicationStatus(@RequestBody UpdateStatusRequest updateStatusRequest){
+<b class="nc">&nbsp;      UserApplicationStatusUpdateResponseDTO userApplicationStatusUpdateResponseDTO=userApplicationDetailService.updateStatus(updateStatusRequest.getId(),updateStatusRequest.getNewStatus());</b>
+<b class="nc">&nbsp;      ApiResponse&lt;UserApplicationStatusUpdateResponseDTO&gt; response=ApiResponse.success(userApplicationStatusUpdateResponseDTO,&quot;Application Status updated successfully...!&quot;);</b>
+<b class="nc">&nbsp;      return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PutMapping(&quot;/application/{id}/evaluate&quot;)
+&nbsp;    public ResponseEntity&lt;UserApplicationRejectResponseDTO&gt; rejectApplication(@PathVariable UUID id) {
+<b class="nc">&nbsp;        UserApplicationRejectResponseDTO response = userApplicationDetailService.evaluateApplication(id);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;/cir&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;InterestRateCalculationResponseDTO&gt;&gt; calculateInterestRate(@Valid @RequestBody InterestRateCalculationRequestDTO request) {
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO result = interestRateCalculationService.calculateInterestRate(request);</b>
+<b class="nc">&nbsp;        ApiResponse&lt;InterestRateCalculationResponseDTO&gt; response = ApiResponse.success(result, &quot;Interest rate calculated successfully using &quot; + result.getCalculationMethod());</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @PostMapping(&quot;/cir/bs&quot;)
+&nbsp;    public ResponseEntity&lt;ApiResponse&lt;InterestRateCalculationResponseDTO&gt;&gt; calculateInterestRateBinarySearch(@Valid @RequestBody InterestRateCalculationRequestDTO request) {
+<b class="nc">&nbsp;        InterestRateCalculationResponseDTO result = interestRateCalculationService.calculateInterestRateBinarySearch(request);</b>
+<b class="nc">&nbsp;        ApiResponse&lt;InterestRateCalculationResponseDTO&gt; response = ApiResponse.success(result, &quot;Interest rate calculated successfully using &quot; + result.getCalculationMethod());</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(response);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;//    @PostMapping(&quot;/ce&quot;)
+&nbsp;//    public ResponseEntity&lt;InterestRateCalculationResponseDTO&gt; calculateEmiRateOfInterest(@RequestBody UserApplicationRequestDTO requestDTO) {
+&nbsp;//        InterestRateCalculationResponseDTO response = loanInterestCalculationService.computeLoanInterestRate(requestDTO);
+&nbsp;//        return ResponseEntity.ok(response);
+&nbsp;//    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-09 12:15</div>
+</div>
+</body>
+</html>

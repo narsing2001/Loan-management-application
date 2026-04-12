@@ -1,0 +1,157 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  application:
+    name: educationloan
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      auto-commit: true
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:vr09Wp+3kKf7DbyPA8a9vjO4H0JJvjnmY7tuHDeJKXk=}
+    access-token-expiration-ms: 9000000
+    refresh-token-expiration-ms: 604800000
+  interceptor:
+    request-logging:
+      enabled: true
+      slow-request-threshold-ms: 2000
+    rate-limiting:
+      token-bucket:
+        enabled: false
+        bucket-capacity: 5
+        refill-tokens: 5
+        refill-duration-minutes: 1
+        login-bucket-capacity: 10
+        register-bucket-capacity: 10
+    token-expiry:
+      enabled: true
+      warning-before-expiry-ms: 120000
+      public-urls:
+        - /api/v1/auth/login
+        - /api/v1/auth/register
+        - /api/v1/auth/refresh
+    audit-logging:
+      enabled: true
+      log-anonymous: true
+      exclude-urls:
+        - /actuator/health
+        - /actuator/info
+        - /favicon.ico
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+#  config: classpath:logback-spring.xml
+  file:
+    name: logs/educationloan.log
+    max-size: 10MB
+    max-history: 30
+  level:
+    root: WARN
+    com.example.educationloan: INFO
+    org.springframework.web.servlet.resource: OFF
+
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+    doc-expansion: none
+    display-request-duration: true
+    show-extensions: true
+    show-common-extensions: true
+    default-models-expand-depth: 3
+    default-model-expand-depth: 3
+    display-operation-id: false
+    filter: true
+    try-it-out-enabled: true
+    syntaxHighlight:
+      activated: true
+      theme: monokai
+    persistAuthorization: true
+    supportedSubmitMethods:
+      - get
+      - post
+      - put
+      - delete
+      - patch
+    disable-swagger-default-url: true
+    # Custom CSS and styling
+    urls:
+      - name: Education Loan API v1
+        url: /api-docs
+    # Group endpoints
+    group-configs:
+      - group: Authentication
+        paths-to-match: /api/v1/auth/**
+      - group: User Management
+        paths-to-match: /api/v1/users/**
+      - group: Role Management
+        paths-to-match: /api/v1/roles/**
+      - group: User-Role Assignment
+        paths-to-match: /api/v1/user_roles/**
+      - group: Reports
+        paths-to-match: /api/v1/reports/**
+
+        app:
+          interceptor:
+            token-expiry:
+              public-urls:
+                - /api/v1/auth/login
+                - /api/v1/auth/register
+                - /api/v1/auth/refresh
+                - /swagger-ui.html
+                - /swagger-ui/**
+                - /api-docs
+                - /v3/api-docs/**

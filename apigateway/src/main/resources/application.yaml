@@ -21,8 +21,8 @@ spring:
         cors-configurations:
           '[/**]':
             allowedOrigins:
-              - "http://localhost:3000"   # React frontend API call allowed for this port
-              - "http://localhost:4200"   # Angular frontend A{PI call allowed for this port
+              - "http://localhost:3000"
+              - "http://localhost:4200"
             allowedMethods:
               - GET
               - POST
@@ -38,6 +38,14 @@ spring:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
 
       routes:
+
+        - id: swagger-route
+          uri: lb://educationloan
+          predicates:
+              - Path=/swagger-ui.html, /swagger-ui/**, /api-docs, /v3/api-docs/**
+          filters:
+              - RewritePath=/(?<remaining>.*), /${remaining}
+
         - id: auth-route
           uri: lb://educationloan
           predicates:
@@ -88,7 +96,7 @@ management:
     health:
       show-details: always
 
-# ✅ MISSING — logging to
+#
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG

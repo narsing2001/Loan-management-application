@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > UserApplicationStatusResponseDTO</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.example.LoanTypeStrategyInterest.dto.dto1</a>
+</div>
+
+<h1>Coverage Summary for Class: UserApplicationStatusResponseDTO (com.example.LoanTypeStrategyInterest.dto.dto1)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserApplicationStatusResponseDTO</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/38)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">UserApplicationStatusResponseDTO$UserApplicationStatusResponseDTOBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">UserApplicationStatusResponseDTO$UserApplicationStatusResponseDTOBuilderImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/38)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/18)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.example.LoanTypeStrategyInterest.dto.dto1;
+&nbsp;
+&nbsp;import com.example.LoanTypeStrategyInterest.entity.entity1.UserApplicationDetail;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.ApplicationStatus;
+&nbsp;import com.example.LoanTypeStrategyInterest.enums.enum1.LoanType;
+&nbsp;import com.fasterxml.jackson.annotation.JsonInclude;
+&nbsp;import lombok.AllArgsConstructor;
+&nbsp;
+&nbsp;import lombok.Data;
+&nbsp;import lombok.NoArgsConstructor;
+&nbsp;import lombok.experimental.SuperBuilder;
+&nbsp;
+<b class="nc">&nbsp;@Data</b>
+<b class="nc">&nbsp;@SuperBuilder</b>
+<b class="nc">&nbsp;@NoArgsConstructor</b>
+<b class="nc">&nbsp;@AllArgsConstructor</b>
+&nbsp;@JsonInclude(JsonInclude.Include.NON_NULL)
+&nbsp;public class UserApplicationStatusResponseDTO extends UserApplicationResponseDTO {
+<b class="nc">&nbsp;    private String applicationId;</b>
+<b class="nc">&nbsp;    private String applicantName;</b>
+<b class="nc">&nbsp;    private ApplicationStatus status;</b>
+<b class="nc">&nbsp;    private LoanType loanType;</b>
+&nbsp;
+&nbsp;    private UserApplicationStatusResponseDTO buildStatusResponse(UserApplicationDetail entity) {
+<b class="nc">&nbsp;        return UserApplicationStatusResponseDTO.builder()</b>
+<b class="nc">&nbsp;                .applicationId(entity.getId().toString())</b>
+<b class="nc">&nbsp;                .applicantName(entity.getApplicantName())</b>
+<b class="nc">&nbsp;                .loanType(entity.getLoanType())</b>
+<b class="nc">&nbsp;                .status(entity.getApplicationStatus())</b>
+<b class="nc">&nbsp;                .admissionLetterVerified(entity.isAdmissionLetterVerified())</b>
+<b class="nc">&nbsp;                .institutionApproved(entity.isInstitutionApproved())</b>
+<b class="nc">&nbsp;                .build();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-04-09 12:15</div>
+</div>
+</body>
+</html>
