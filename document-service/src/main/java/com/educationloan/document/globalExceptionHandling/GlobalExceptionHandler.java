@@ -1,5 +1,4 @@
 package com.educationloan.document.globalExceptionHandling;
-
 import com.educationloan.document.dto.ApiErrorResponseDTO.ApiErrorResponse;
 import com.educationloan.document.globalExceptionHandling.CustomException.*;
 import org.springframework.http.HttpStatus;
@@ -12,14 +11,12 @@ import java.time.Instant;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     private ResponseEntity<ApiErrorResponse> buildResponse(String message, HttpStatus status) {
-        return ResponseEntity.status(status).body(
-                ApiErrorResponse.builder()
+        return ResponseEntity.status(status).body(ApiErrorResponse.builder()
                         .timestamp(Instant.now())
                         .status(status.value())
                         .error(status.getReasonPhrase())
                         .message(message)
-                        .build()
-        );
+                        .build());
     }
 
     @ExceptionHandler(InvalidFileException.class)
@@ -44,12 +41,20 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ApplicantNotAllowedException.class)
     public ResponseEntity<ApiErrorResponse> handleApplicantNotAllowed(ApplicantNotAllowedException ex) {
-        return buildResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return buildResponse(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(S3PresignedUrlException.class)
     public ResponseEntity<ApiErrorResponse> handleS3PresignedUrlException(S3PresignedUrlException ex) {
         return buildResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(S3KeyNotFoundException.class)
+    public ResponseEntity<ApiErrorResponse> handleS3KeyNotFound(S3KeyNotFoundException ex) {
+        return buildResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(LoanNotFoundException.class)
+    public ResponseEntity<ApiErrorResponse> handleLoanNotFound(LoanNotFoundException ex) {
+        return buildResponse(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }
 

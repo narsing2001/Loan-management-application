@@ -1,5 +1,4 @@
 package com.educationloan.document.dto;
-
 import lombok.*;
 
 @Getter

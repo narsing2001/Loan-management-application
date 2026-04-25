@@ -1,6 +1,8 @@
 package com.bank.loan.eligibility_service.entity;
 
 import com.bank.loan.eligibility_service.enums.CollegeCategory;
+import com.bank.loan.eligibility_service.enums.Country;
+import com.bank.loan.eligibility_service.enums.CourseType;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -24,5 +26,12 @@ public class EducationDetails {
     private String admissionReferenceNumber;
 
     @Enumerated(EnumType.STRING)
+    private Country country;
+    @Enumerated(EnumType.STRING)
     private CollegeCategory collegeCategory;
+
+    @Enumerated(EnumType.STRING)
+    private CourseType courseType;
+
+
 }

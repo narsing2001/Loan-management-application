@@ -18,8 +18,7 @@ public class VerificationController {
     private final VerificationServiceImpl verificationService;
 
     @GetMapping("/{documentId}")
-    public VerificationResponseDTO getVerificationStatus(
-            @PathVariable UUID documentId) {
+    public VerificationResponseDTO getVerificationStatus(@PathVariable UUID documentId) {
         return verificationService.getVerificationStatus(documentId);
     }
 }

@@ -16,4 +16,5 @@ public class CoApplicantDetails {
     private String coApplicantRelation;
     private Double coApplicantIncome;
     private Integer coApplicantCreditScore;
+
 }

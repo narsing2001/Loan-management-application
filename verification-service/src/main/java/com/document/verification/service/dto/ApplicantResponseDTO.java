@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ApplicantResponseDTO {
-
     private Long id;
     private String name;
     private String dob;

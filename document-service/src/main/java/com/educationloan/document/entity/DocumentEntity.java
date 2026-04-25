@@ -1,5 +1,4 @@
 package com.educationloan.document.entity;
-
 import com.educationloan.document.enumConst.DocumentStatus;
 import com.educationloan.document.enumConst.DocumentType;
 import jakarta.persistence.*;
@@ -17,7 +16,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class DocumentEntity {
-
     @Id
     @UuidGenerator
     private UUID id;
@@ -33,8 +31,12 @@ public class DocumentEntity {
     private DocumentStatus status;
 
     private String filename;
+
+    @Column(name = "s3_key")
     private String s3Key;
+
     private String contentType;
+
     private Long fileSize;
 
     private Instant uploadedAt;

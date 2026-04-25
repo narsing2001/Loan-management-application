@@ -2,10 +2,12 @@ package com.bank.loan.eligibility_service.Validator;
 
 import com.bank.loan.eligibility_service.entity.EducationDetails;
 import com.bank.loan.eligibility_service.exception.BusinessException;
+import org.springframework.stereotype.Component;
 
 import java.time.Year;
 import java.util.Optional;
 
+@Component
 public class EducationValidator {
 
     public void validate(EducationDetails education) {

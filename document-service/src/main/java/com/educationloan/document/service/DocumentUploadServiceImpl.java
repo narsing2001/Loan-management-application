@@ -8,9 +8,7 @@ import com.educationloan.document.enumConst.ApplicantType;
 import com.educationloan.document.enumConst.DocumentStatus;
 import com.educationloan.document.enumConst.DocumentType;
 import com.educationloan.document.enumConst.StudyLocationType;
-import com.educationloan.document.globalExceptionHandling.CustomException.ApplicantNotAllowedException;
-import com.educationloan.document.globalExceptionHandling.CustomException.ApplicantNotFoundException;
-import com.educationloan.document.globalExceptionHandling.CustomException.DocumentNotFoundException;
+import com.educationloan.document.globalExceptionHandling.CustomException.*;
 import com.educationloan.document.repository.ApplicantRepository;
 import com.educationloan.document.repository.DocumentRepository;
 import com.educationloan.document.repository.LoanRepository;
@@ -56,9 +54,7 @@ public class DocumentUploadServiceImpl implements DocumentUploadService {
 
         documentValidator.validateFileType(file);
 
-        ApplicantEntity applicant = applicantRepo.findById(applicantId)
-                .orElseThrow(() ->
-                        new ApplicantNotFoundException("Applicant not found"));
+        ApplicantEntity applicant = applicantRepo.findById(applicantId).orElseThrow(() -> new ApplicantNotFoundException("Applicant not found"));
 
         LoanEntity loan = applicant.getLoan();
         BigDecimal loanAmount = loan.getLoanAmount();
@@ -67,11 +63,8 @@ public class DocumentUploadServiceImpl implements DocumentUploadService {
         Set<ApplicantType> allowedApplicants = documentRuleEngine.getAllowedApplicants(studyLocationType, loanAmount);
 
         if (!allowedApplicants.contains(applicant.getApplicantType())) {
-            throw new ApplicantNotAllowedException(
-                    "Applicant type " + applicant.getApplicantType() +
-                            " not allowed for loan amount " + loanAmount +
-                            " and study location " + studyLocationType
-            );
+            throw new ApplicantNotAllowedException("Applicant type " + applicant.getApplicantType() + " not allowed for loan amount " + loanAmount +
+                            " and study location " + studyLocationType);
         }
         String fileName = UUID.randomUUID() + "-" + file.getOriginalFilename();
 
@@ -91,49 +84,63 @@ public class DocumentUploadServiceImpl implements DocumentUploadService {
                 .build();
 
         DocumentEntity savedEntity = documentRepo.save(entity);
+
         log.info("Document uploaded successfully: {}", savedEntity.getId());
-        publishKafkaEvent(savedEntity);
+
+        try {
+            publishKafkaEvent(savedEntity);
+        } catch (Exception ex) {
+            log.error("Kafka publish failed for documentId: {}", savedEntity.getId(), ex);
+        }
+
         DocumentResponseDTO dto = mapper.map(savedEntity, DocumentResponseDTO.class);
+
         dto.setApplicantType(savedEntity.getApplicant().getApplicantType());
-        dto.setDownloadUrl(s3Util.generatePreSignedDownloadUrl(savedEntity.getS3Key(), 5));
+
+        String key = savedEntity.getS3Key();
+        if (key == null || key.isBlank()) {
+            log.error("S3 key is null for documentId: {}", savedEntity.getId());
+            throw new RuntimeException("S3 key missing for document");
+        }
+        dto.setDownloadUrl(s3Util.generatePreSignedDownloadUrl(key, 5));
         return dto;
     }
+    private void publishKafkaEvent(DocumentEntity savedEntity){
+        DocumentUploadedEventDTO event = DocumentUploadedEventDTO.builder()
+                .documentId(savedEntity.getId())
+                .applicantId(savedEntity.getApplicant().getId())
+                .loanId(savedEntity.getApplicant().getLoan().getId())
+                .documentType(savedEntity.getDocType())
+                .filename(savedEntity.getFilename())
+                .s3Key(savedEntity.getS3Key())
+                .contentType(savedEntity.getContentType())
+                .fileSize(savedEntity.getFileSize())
+                .uploadedAt(savedEntity.getUploadedAt())
+                .build();
 
-    private void publishKafkaEvent(DocumentEntity savedEntity) {
-
-          var event = DocumentUploadedEventDTO.builder()
-                            .documentId(savedEntity.getId())
-                            .applicantId(savedEntity.getApplicant().getId())
-                            .loanId(savedEntity.getApplicant().getLoan().getId())
-                            .documentType(savedEntity.getDocType())
-                            .filename(savedEntity.getFilename())
-                            .s3Key(savedEntity.getS3Key())
-                            .contentType(savedEntity.getContentType())
-                            .fileSize(savedEntity.getFileSize())
-                            .uploadedAt(savedEntity.getUploadedAt())
-                            .build();
-
-            kafkaTemplate.send(documentUploadedTopic, savedEntity.getId().toString(), event);
-
-            log.info("Kafka event published: {}", event);
-        }
+        kafkaTemplate.send(documentUploadedTopic, savedEntity.getId().toString(), event);
+        log.info("Kafka event published: {}", event);
+    }
 
     @Override
     public String getDownloadUrl(UUID documentId, Long loanId) {
-
         DocumentEntity document = documentRepo.findByIdAndApplicant_Loan_Id(documentId, loanId)
-                .orElseThrow(() ->
-                        new DocumentNotFoundException("Document not found"));
+                .orElseThrow(() -> new DocumentNotFoundException("Document not found"));
 
-        return s3Util.generatePreSignedDownloadUrl(document.getS3Key(), 5);
+        String key = document.getS3Key();
+        if (key == null || key.isBlank()) {
+            throw new S3KeyNotFoundException("S3 key missing for document");
+        }
+        System.out.println("S3 KEY: " + document.getS3Key());
+        return s3Util.generatePreSignedDownloadUrl(key, 5);
     }
+
     @Override
-    public Set<ApplicantType> getRequiredApplicantTypes(Long loanId,StudyLocationType studyLocationType) {
-
-        LoanEntity loan = loanRepository.findById(loanId)
-                .orElseThrow(() -> new RuntimeException("Loan not found"));
-
-        return documentRuleEngine.getAllowedApplicants(studyLocationType, loan.getLoanAmount());
+    public Set<ApplicantType> getRequiredApplicantTypes(Long loanId, StudyLocationType studyLocationType) {
+        LoanEntity loan = loanRepository.findById(loanId).orElseThrow(() -> new LoanNotFoundException("Loan not found"));
+        return documentRuleEngine.getAllowedApplicants(
+                studyLocationType,
+                loan.getLoanAmount());
     }
     private String buildS3Key(
             Long loanId,
@@ -145,5 +152,4 @@ public class DocumentUploadServiceImpl implements DocumentUploadService {
                 + applicantType + "/"
                 + fileName;
     }
-
 }

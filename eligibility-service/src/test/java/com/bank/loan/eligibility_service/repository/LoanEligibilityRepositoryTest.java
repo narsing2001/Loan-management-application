@@ -55,7 +55,6 @@ public class LoanEligibilityRepositoryTest {
                 .coApplicantDetails(coApplicant)
                 .decisionDetails(decision)
                 .createdAt(LocalDateTime.now())
-                .createdBy("system")
                 .build();
 
     }

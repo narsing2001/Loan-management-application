@@ -1,5 +1,6 @@
 package com.document.verification.service.service;
 
+import com.document.verification.service.globalExceptionHandling.customException.S3DownloadException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -14,31 +15,24 @@ import java.nio.file.StandardCopyOption;
 @Service
 @RequiredArgsConstructor
 public class S3DownloadService {
-
     private final S3Client s3Client;
 
     @Value("${aws.s3.bucket}")
     private String bucket;
 
     public File download(String key) {
-
         try {
             GetObjectRequest request = GetObjectRequest.builder()
                     .bucket(bucket)
                     .key(key)
                     .build();
 
-            ResponseInputStream<GetObjectResponse> response =
-                    s3Client.getObject(request);
-
+            ResponseInputStream<GetObjectResponse> response = s3Client.getObject(request);
             File tempFile = File.createTempFile("document-", ".tmp");
-
             Files.copy(response, tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
             return tempFile;
-
         } catch (Exception e) {
-            throw new RuntimeException("Failed to download file from S3", e);
+            throw new S3DownloadException("Failed to download file from S3");
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.document.verification.service.parser;
 
+import com.document.verification.service.globalExceptionHandling.customException.ParserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,6 @@ public class ParserFactory {
         return parsers.stream()
                 .filter(p -> p.supports(type))
                 .findFirst()
-                .orElseThrow(() ->
-                        new RuntimeException("Parser not found for " + type));
+                .orElseThrow(() -> new ParserNotFoundException("Parser not found for " + type));
     }
 }

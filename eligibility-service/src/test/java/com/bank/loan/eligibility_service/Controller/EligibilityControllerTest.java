@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class EligibilityControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    private MockMvc mockMvc;      //dont need real server
 
     @MockBean
     private EligibilityService eligibilityService;
@@ -88,10 +88,7 @@ public class EligibilityControllerTest {
     }
 
 
-
-
     private EligibilityRequestDTO buildRequest() {
-
 
         StudentDetails student = StudentDetails.builder()
                 .age(22)

@@ -1,9 +1,11 @@
 package com.bank.loan.eligibility_service.Calculator;
 
 import com.bank.loan.eligibility_service.entity.FinancialDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class LTVCalculator {
 
     public double calculate(FinancialDetails financial){

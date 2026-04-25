@@ -19,10 +19,8 @@ public class StudentDetails {
 
     private Integer age;
     private String studentName;
-
     @Email(message = "Invalid email format")
     private String studentEmail;
-
     private String studentMobile;
     private String panNumber;
     private String aadhaarNumber;

@@ -6,7 +6,6 @@ import com.document.verification.service.dto.VerificationResponseDTO;
 import java.util.UUID;
 
 public interface VerificationService {
-
     void verifyDocument(DocumentUploadedEventDTO event);
 
     VerificationResponseDTO getVerificationStatus(UUID documentId);

@@ -21,11 +21,9 @@ public class MockAadhaarController {
             response.setMessage("Aadhaar valid");
 
         } else {
-
             response.setValid(false);
             response.setMessage("Invalid Aadhaar");
         }
-
         return response;
     }
 }

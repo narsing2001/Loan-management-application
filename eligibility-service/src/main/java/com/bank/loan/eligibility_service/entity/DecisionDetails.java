@@ -15,7 +15,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class DecisionDetails {
-
     @Enumerated(EnumType.STRING)
     private RiskCategory riskCategory; // better → enum
     private Boolean eligible;

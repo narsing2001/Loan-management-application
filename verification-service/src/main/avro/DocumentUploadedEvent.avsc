@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "DocumentUploadedEvent",
+  "namespace": "com.educationloan.avro",
+  "fields": [
+    { "name": "documentId", "type": "string" },
+    { "name": "applicantId", "type": "long" },
+    { "name": "loanId", "type": "long" },
+    { "name": "documentType", "type": "string" },
+    { "name": "filename", "type": "string" },
+    { "name": "s3Key", "type": "string" },
+    { "name": "contentType", "type": "string" },
+    { "name": "fileSize", "type": "long" },
+    { "name": "uploadedAt", "type": "string" }
+  ]
+}

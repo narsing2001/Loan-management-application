@@ -1,4 +1,5 @@
 package com.bank.loan.eligibility_service.entity;
+import com.bank.loan.eligibility_service.enums.LoanType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,9 +34,14 @@ public class LoanEligibility {
     @Embedded
     private DecisionDetails decisionDetails;
 
+    @Embedded
+    private DocumentDetails documentDetails;
+
+    private LoanType loanType;
+
     private LocalDateTime createdAt;    //audit fields
     private LocalDateTime updatedAt;    //audit fields
-    private String createdBy;           //audit field
+
 
 
 }

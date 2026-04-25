@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
         @PostMapping("/aadhaar/verify")
         AadhaarVerifyResponse verifyAadhaar(
                 @RequestHeader("Authorization") String token,
-                @RequestBody AadhaarVerifyRequest request
-        );
+                @RequestBody AadhaarVerifyRequest request);
     }
 

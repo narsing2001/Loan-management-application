@@ -12,7 +12,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class VerificationResponseDTO {
-
     private UUID documentId;
     private Long applicantId;
     private DocumentType documentType;

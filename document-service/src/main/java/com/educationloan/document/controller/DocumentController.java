@@ -19,7 +19,6 @@ import java.util.UUID;
 @RequestMapping("/api/documents")
 @RequiredArgsConstructor
 public class DocumentController {
-
     private final DocumentUploadService documentService;
 
     @PostMapping("/upload")
@@ -27,31 +26,25 @@ public class DocumentController {
             @RequestParam MultipartFile file,
             @RequestParam Long applicantId,
             @RequestParam DocumentType docType,
-            @RequestParam StudyLocationType studyLocationType
-    ) {
+            @RequestParam StudyLocationType studyLocationType) {
         DocumentResponseDTO response = documentService.uploadDocument(
                 file,
                 applicantId,
                 docType,
-                studyLocationType
-        );
+                studyLocationType);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/required")
     public ResponseEntity<List<ApplicantType>> getRequiredApplicantTypes(
-            @RequestParam Long loanId,StudyLocationType studyLocationType) {
+            @RequestParam Long loanId,@RequestParam StudyLocationType studyLocationType) {
 
-        Set<ApplicantType> types =
-                documentService.getRequiredApplicantTypes(loanId,studyLocationType);
+        Set<ApplicantType> types = documentService.getRequiredApplicantTypes(loanId,studyLocationType);
         return ResponseEntity.ok(new ArrayList<>(types));
     }
 
     @GetMapping("/{documentId}/download-url")
-    public ResponseEntity<String> getDownloadUrl(
-            @PathVariable UUID documentId,
-            @RequestParam Long loanId
-    ) {
+    public ResponseEntity<String> getDownloadUrl(@PathVariable UUID documentId, @RequestParam Long loanId) {
         String url = documentService.getDownloadUrl(documentId, loanId);
         return ResponseEntity.ok(url);
     }

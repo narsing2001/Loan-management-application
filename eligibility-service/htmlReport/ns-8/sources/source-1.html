@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > EligiblityServiceImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.bank.loan.eligibility_service.service</a>
+</div>
+
+<h1>Coverage Summary for Class: EligiblityServiceImpl (com.bank.loan.eligibility_service.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">EligiblityServiceImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (1/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    39.1%
+  </span>
+  <span class="absValue">
+    (9/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.6%
+  </span>
+  <span class="absValue">
+    (58/64)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">EligiblityServiceImpl$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    40%
+  </span>
+  <span class="absValue">
+    (2/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    39.1%
+  </span>
+  <span class="absValue">
+    (9/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.8%
+  </span>
+  <span class="absValue">
+    (59/65)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.bank.loan.eligibility_service.service;
+&nbsp;
+&nbsp;import com.bank.loan.eligibility_service.Calculator.FOIRCalculator;
+&nbsp;import com.bank.loan.eligibility_service.Calculator.LTVCalculator;
+&nbsp;import com.bank.loan.eligibility_service.Validator.CoApplicantValidator;
+&nbsp;import com.bank.loan.eligibility_service.Validator.EducationValidator;
+&nbsp;import com.bank.loan.eligibility_service.Validator.FinancialValidator;
+&nbsp;import com.bank.loan.eligibility_service.Validator.StudentValidator;
+&nbsp;import com.bank.loan.eligibility_service.dto.EligibilityRequestDTO;
+&nbsp;import com.bank.loan.eligibility_service.dto.EligibilityResponseDTO;
+&nbsp;import com.bank.loan.eligibility_service.entity.*;
+&nbsp;import com.bank.loan.eligibility_service.enums.CollegeCategory;
+&nbsp;import com.bank.loan.eligibility_service.enums.RiskCategory;
+&nbsp;
+&nbsp;import com.bank.loan.eligibility_service.nationalityStrategy.NationalityEligibilityStrategy;
+&nbsp;import com.bank.loan.eligibility_service.nationalityStrategy.NationalityStrategyFactory;
+&nbsp;import com.bank.loan.eligibility_service.repository.LoanEligibilityRepository;
+&nbsp;import com.bank.loan.eligibility_service.strategy.RiskStrategyFactory;
+&nbsp;import lombok.RequiredArgsConstructor;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.time.LocalDate;
+&nbsp;import java.time.LocalDateTime;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+&nbsp;@RequiredArgsConstructor
+&nbsp;public class EligiblityServiceImpl implements EligibilityService {
+&nbsp;
+&nbsp;    private static final double MAX_LOAN_PERCENTAGE = 0.9;
+&nbsp;
+&nbsp;    private static final String APPROVED_MESSAGE = &quot;Loan Approved&quot;;
+&nbsp;    private static final String REJECTED_MESSAGE = &quot;Loan Rejected&quot;;
+&nbsp;
+&nbsp;    private final LoanEligibilityRepository repository;
+&nbsp;
+&nbsp;    private final StudentValidator studentValidator;
+&nbsp;    private final EducationValidator educationValidator;
+&nbsp;    private final FinancialValidator financialValidator;
+&nbsp;    private final CoApplicantValidator coApplicantValidator;
+&nbsp;
+&nbsp;    private final FOIRCalculator foirCalculator;
+&nbsp;    private final LTVCalculator ltvCalculator;
+&nbsp;
+&nbsp;    private final RiskStrategyFactory riskFactory;
+&nbsp;
+&nbsp;    private final NationalityStrategyFactory nationalityFactory;
+&nbsp;    @Override
+&nbsp;    public EligibilityResponseDTO checkEligibility(EligibilityRequestDTO request) {
+&nbsp;
+<b class="fc">&nbsp;        StudentDetails student = request.getStudentDetails();</b>
+<b class="fc">&nbsp;        EducationDetails education = request.getEducationDetails();</b>
+<b class="fc">&nbsp;        FinancialDetails financial = request.getFinancialDetails();</b>
+<b class="fc">&nbsp;        CoApplicantDetails coApplicant = request.getCoApplicantDetails();</b>
+&nbsp;
+<b class="fc">&nbsp;        studentValidator.validate(student);</b>
+<b class="fc">&nbsp;        educationValidator.validate(education);</b>
+<b class="fc">&nbsp;        financialValidator.validate(financial);</b>
+<b class="fc">&nbsp;        coApplicantValidator.validate(coApplicant);</b>
+&nbsp;
+<b class="fc">&nbsp;        double totalIncome = financial.getAnnualIncome();</b>
+&nbsp;
+<b class="pc">&nbsp;        if (coApplicant != null &amp;&amp; Boolean.TRUE.equals(coApplicant.getCoApplicationPresent())){</b>
+<b class="nc">&nbsp;            totalIncome +=coApplicant.getCoApplicantIncome();</b>
+&nbsp;        }
+&nbsp;             //because main eligibility is depend on repayment capacity
+<b class="fc">&nbsp;        FinancialDetails updatedFinancial = FinancialDetails.builder()</b>
+<b class="fc">&nbsp;                .annualIncome(totalIncome)</b>
+<b class="fc">&nbsp;                .existingEMI(financial.getExistingEMI())</b>
+<b class="fc">&nbsp;                .courseFees(financial.getCourseFees())</b>
+<b class="fc">&nbsp;                .requestedLoanAmount(financial.getRequestedLoanAmount())</b>
+<b class="fc">&nbsp;                .creditScore(financial.getCreditScore())</b>
+<b class="fc">&nbsp;                .build();</b>
+&nbsp;
+<b class="fc">&nbsp;        double foir = foirCalculator.calculate(updatedFinancial);</b>
+<b class="fc">&nbsp;        double ltv = ltvCalculator.calculate(updatedFinancial);</b>
+<b class="fc">&nbsp;        double maxEligibleAmount = financial.getCourseFees() * MAX_LOAN_PERCENTAGE;</b>
+&nbsp;
+<b class="fc">&nbsp;        updatedFinancial.setFoir(foir);</b>
+<b class="fc">&nbsp;        updatedFinancial.setLtvRatio(ltv);</b>
+<b class="fc">&nbsp;        updatedFinancial.setMaxEligibleAmount(maxEligibleAmount);</b>
+&nbsp;
+<b class="fc">&nbsp;        CollegeCategory category =education.getCollegeCategory();</b>
+<b class="fc">&nbsp;        RiskCategory risk = riskFactory.evaluate(updatedFinancial, foir,category);</b>
+<b class="fc">&nbsp;        boolean eligible = false;</b>
+<b class="pc">&nbsp;        switch (risk) {</b>
+&nbsp;
+&nbsp;            case LOW:
+<b class="pc">&nbsp;                eligible = foir &lt;= 40 &amp;&amp; ltv &lt;= 80;</b>
+&nbsp;                break;
+&nbsp;
+&nbsp;            case MEDIUM:
+<b class="nc">&nbsp;                eligible = foir &lt;= 50 &amp;&amp; ltv &lt;= 90;</b>
+&nbsp;                break;
+&nbsp;
+&nbsp;            case HIGH:
+<b class="nc">&nbsp;                eligible = foir &lt;= 60 &amp;&amp; ltv &lt;= 95;</b>
+&nbsp;                break;
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        NationalityEligibilityStrategy nationalityStrategy =</b>
+<b class="fc">&nbsp;                nationalityFactory.getStrategy(student.getNationality());</b>
+<b class="fc">&nbsp;        nationalityStrategy.validate(student, updatedFinancial, coApplicant);</b>
+&nbsp;
+<b class="fc">&nbsp;        LocalDateTime createdAt = LocalDateTime.now();</b>
+<b class="fc">&nbsp;        LocalDateTime updateAt = createdAt.plusMinutes(6);</b>
+<b class="fc">&nbsp;        LocalDate decisionDate = createdAt.toLocalDate();</b>
+&nbsp;
+<b class="fc">&nbsp;        LoanEligibility entity = LoanEligibility.builder()</b>
+<b class="fc">&nbsp;                .studentDetails(student)</b>
+<b class="fc">&nbsp;                .educationDetails(education)</b>
+<b class="fc">&nbsp;                .financialDetails(updatedFinancial)</b>
+<b class="fc">&nbsp;                .coApplicantDetails(coApplicant)</b>
+<b class="fc">&nbsp;                .decisionDetails(</b>
+<b class="fc">&nbsp;                        DecisionDetails.builder()</b>
+<b class="fc">&nbsp;                                .eligible(eligible)</b>
+<b class="fc">&nbsp;                                .riskCategory(risk)</b>
+<b class="fc">&nbsp;                                .rejectionReason(eligible ? null : &quot;FOIR/LTV exceeded&quot;)</b>
+<b class="fc">&nbsp;                                .decisionDate(decisionDate)</b>
+<b class="fc">&nbsp;                                .build()</b>
+&nbsp;                )
+<b class="fc">&nbsp;                .updatedAt(updateAt)</b>
+<b class="fc">&nbsp;                .createdAt(createdAt)</b>
+<b class="fc">&nbsp;                .build();</b>
+&nbsp;
+<b class="fc">&nbsp;        LoanEligibility saved = repository.save(entity);</b>
+&nbsp;
+<b class="fc">&nbsp;        return EligibilityResponseDTO.builder()</b>
+<b class="fc">&nbsp;                .eligible(eligible)</b>
+<b class="fc">&nbsp;                .riskCategory(risk.name())</b>
+<b class="fc">&nbsp;                .foir(foir)</b>
+<b class="fc">&nbsp;                .ltvRatio(ltv)</b>
+<b class="fc">&nbsp;                .maxEligibleAmount(maxEligibleAmount)</b>
+<b class="fc">&nbsp;                .message(eligible ? APPROVED_MESSAGE : REJECTED_MESSAGE)</b>
+<b class="fc">&nbsp;                .build();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public List&lt;LoanEligibility&gt; getAllEligibility() {
+<b class="nc">&nbsp;        return repository.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LoanEligibility getEligibilityById(Long id){
+<b class="nc">&nbsp;        return repository.findById(id).orElseThrow(()-&gt;new RuntimeException(&quot;record not found&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void deleteEligibility(Long id){
+<b class="nc">&nbsp;        repository.deleteById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-03-21 12:37</div>
+</div>
+</body>
+</html>

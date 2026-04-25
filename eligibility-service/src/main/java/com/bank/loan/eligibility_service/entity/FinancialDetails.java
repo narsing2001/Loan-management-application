@@ -12,11 +12,12 @@ import lombok.*;
 public class FinancialDetails {
 
     private Integer creditScore;
-    private Double annualIncome;
     private Double courseFees;
     private Double requestedLoanAmount;
     private Double existingEMI;
     private Double foir;
     private Double ltvRatio;
     private Double maxEligibleAmount;
+    private Boolean collateralProvided;
+    private Double collateralValue;
 }

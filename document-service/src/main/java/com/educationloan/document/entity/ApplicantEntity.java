@@ -1,5 +1,4 @@
 package com.educationloan.document.entity;
-
 import com.educationloan.document.enumConst.ApplicantType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,7 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 public class ApplicantEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

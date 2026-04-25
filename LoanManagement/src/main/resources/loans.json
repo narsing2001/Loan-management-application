@@ -1,0 +1,82 @@
+[
+  {
+    "loanId": 1,
+    "principal": 100000,
+    "interestRate": 11,
+    "tenure": 12,
+    "moratorium": 6,
+    "lockInMonths": 6
+  },
+  {
+    "loanId": 2,
+    "principal": 200000,
+    "interestRate": 12,
+    "tenure": 24,
+    "moratorium": 6,
+    "lockInMonths": 6
+  },
+  {
+    "loanId": 3,
+    "principal": 500000,
+    "interestRate": 10,
+    "tenure": 36,
+    "moratorium": 6,
+    "lockInMonths": 9
+  },
+  {
+    "loanId": 4,
+    "principal": 75000,
+    "interestRate": 13,
+    "tenure": 36,
+    "moratorium": 6,
+    "lockInMonths": 3
+  },
+  {
+    "loanId": 5,
+    "principal": 1500000,
+    "interestRate": 9.5,
+    "tenure": 72,
+    "moratorium": 35,
+    "lockInMonths": 12
+  },
+  {
+    "loanId": 6,
+    "principal": 1000000,
+    "interestRate": 9.5,
+    "tenure": 60,
+    "moratorium": 6,
+    "lockInMonths": 12
+  },
+  {
+    "loanId": 7,
+    "principal": 150000,
+    "interestRate": 12,
+    "tenure": 9,
+    "moratorium": 6,
+    "lockInMonths": 6
+  },
+  {
+    "loanId": 8,
+    "principal": 800000,
+    "interestRate": 10,
+    "tenure": 48,
+    "moratorium": 12,
+    "lockInMonths": 9
+  },
+  {
+    "loanId": 9,
+    "principal": 1500000,
+    "interestRate": 9.5,
+    "tenure": 72,
+    "moratorium": 6,
+    "lockInMonths": 12
+  },
+  {
+    "loanId": 10,
+    "principal": 2500000,
+    "interestRate": 9,
+    "tenure": 84,
+    "moratorium": 12,
+    "lockInMonths": 12
+  }
+]

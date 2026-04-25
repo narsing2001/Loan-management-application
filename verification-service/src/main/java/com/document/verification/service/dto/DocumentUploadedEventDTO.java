@@ -12,7 +12,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class DocumentUploadedEventDTO {
-
     private UUID documentId;
     private Long applicantId;
     private Long loanId;

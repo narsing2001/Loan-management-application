@@ -12,16 +12,13 @@ import java.util.stream.Collectors;
 public class InternationalRuleStrategy implements DocumentRuleStrategy {
 
     private final List<LoanApplicantRule> rules = List.of(
-
             new LoanApplicantRule(
                     new BigDecimal("100000"),
                     new BigDecimal("1000000"),
                     Set.of(
                             ApplicantType.STUDENT,
                             ApplicantType.CO_APPLICANT,
-                            ApplicantType.GUARANTOR
-                    )
-            ),
+                            ApplicantType.GUARANTOR)),
 
             new LoanApplicantRule(
                     new BigDecimal("1000001"),
@@ -30,14 +27,10 @@ public class InternationalRuleStrategy implements DocumentRuleStrategy {
                             ApplicantType.STUDENT,
                             ApplicantType.CO_APPLICANT,
                             ApplicantType.GUARANTOR,
-                            ApplicantType.COLLATERAL_PROVIDER
-                    )
-            )
-    );
+                            ApplicantType.COLLATERAL_PROVIDER)));
 
     @Override
     public Set<ApplicantType> getAllowedApplicants(BigDecimal loanAmount) {
-
         return rules.stream()
                 .filter(rule -> rule.matches(loanAmount))
                 .flatMap(rule -> rule.getApplicants().stream())

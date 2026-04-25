@@ -9,6 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface DocumentVerificationRepository extends JpaRepository<DocumentVerificationEntity, Long> {
-
     Optional<DocumentVerificationEntity> findByDocumentId(UUID documentId);
 }

@@ -6,7 +6,7 @@ public enum CollegeCategory {
     TIER_2,
     TIER_3,
     PRIVATE,
-    GOVENMENT,
+    GOVERNMENT,
     OTHER
 
 }

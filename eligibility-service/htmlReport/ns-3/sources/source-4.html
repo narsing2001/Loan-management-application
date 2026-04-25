@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > StudentValidator</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.bank.loan.eligibility_service.Validator</a>
+</div>
+
+<h1>Coverage Summary for Class: StudentValidator (com.bank.loan.eligibility_service.Validator)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StudentValidator</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    8.3%
+  </span>
+  <span class="absValue">
+    (1/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    2.3%
+  </span>
+  <span class="absValue">
+    (1/43)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.bank.loan.eligibility_service.Validator;
+&nbsp;
+&nbsp;import com.bank.loan.eligibility_service.entity.StudentDetails;
+&nbsp;import com.bank.loan.eligibility_service.enums.Nationality;
+&nbsp;import com.bank.loan.eligibility_service.exception.BusinessException;
+&nbsp;import com.bank.loan.eligibility_service.exception.InvalidAgeException;
+&nbsp;import com.bank.loan.eligibility_service.exception.InvalidPhoneNumber;
+&nbsp;import com.bank.loan.eligibility_service.exception.ValidationException;
+&nbsp;import org.springframework.stereotype.Component;
+&nbsp;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;@Component
+<b class="fc">&nbsp;public class StudentValidator {</b>
+&nbsp;    private static final String PAN_REGEX = &quot;^[A-Z]{5}[0-9]{4}[A-Z]{1}$&quot;;
+&nbsp;    private static final String EMALI_REGEX =&quot;^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$&quot;;
+&nbsp;
+&nbsp;    public void validate(StudentDetails student) {
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student)</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt; new BusinessException(&quot;Student details cannot be null&quot;));</b>
+&nbsp;
+<b class="nc">&nbsp;        validateNationality(student);</b>
+<b class="nc">&nbsp;        validateAge(student);</b>
+<b class="nc">&nbsp;        validatePan(student);</b>
+<b class="nc">&nbsp;        validateAadhaar(student);</b>
+<b class="nc">&nbsp;        validateMobile(student.getStudentMobile(),student.getNationality());</b>
+<b class="nc">&nbsp;        validateName(student);</b>
+<b class="nc">&nbsp;        validateEmail(student);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validateName(StudentDetails student){
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student.getStudentName())</b>
+<b class="nc">&nbsp;                .filter(name -&gt;!name.isBlank())</b>
+<b class="nc">&nbsp;                .filter(name -&gt;name.length() &gt;= 3)</b>
+<b class="nc">&nbsp;                .orElseThrow(()-&gt;new ValidationException(&quot;valid student name is required&quot;));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    private void validateAge(StudentDetails student) {
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student.getAge())</b>
+<b class="nc">&nbsp;                .filter(age -&gt; age &gt;= 18 &amp;&amp; age &lt;= 35)</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt;</b>
+<b class="nc">&nbsp;                        new InvalidAgeException(&quot;Student age must be between 18 and 35&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validatePan(StudentDetails student) {
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student.getPanNumber())</b>
+<b class="nc">&nbsp;                .filter(pan -&gt; !pan.isBlank())</b>
+<b class="nc">&nbsp;                .filter(pan -&gt; pan.matches(PAN_REGEX))</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt;</b>
+<b class="nc">&nbsp;                        new ValidationException(&quot;Invalid PAN number format&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validateAadhaar(StudentDetails student) {
+&nbsp;
+<b class="nc">&nbsp;        if(student.getNationality() == Nationality.INDIAN){</b>
+<b class="nc">&nbsp;            Optional.ofNullable(student.getAadhaarNumber())</b>
+<b class="nc">&nbsp;                    .filter(aadhar -&gt;!aadhar.isBlank())</b>
+<b class="nc">&nbsp;                    .filter(aadhar -&gt;aadhar.matches(&quot;^\\d{12}$&quot;))</b>
+<b class="nc">&nbsp;                    .orElseThrow(() -&gt;new ValidationException(&quot;valid aadhar is required for indian students&quot;));</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validateEmail(StudentDetails student){
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student.getStudentEmail())</b>
+<b class="nc">&nbsp;                .filter(email -&gt;!email.isBlank())</b>
+<b class="nc">&nbsp;                .filter(email-&gt;email.matches(EMALI_REGEX))</b>
+<b class="nc">&nbsp;                .orElseThrow(()-&gt;new ValidationException(&quot;invalid email format&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validateNationality(StudentDetails student) {
+&nbsp;
+<b class="nc">&nbsp;        Optional.ofNullable(student.getNationality())</b>
+<b class="nc">&nbsp;                .orElseThrow(() -&gt;</b>
+<b class="nc">&nbsp;                        new ValidationException(&quot;Nationality is required&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void validateMobile(String mobile,Nationality nationality) {
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        if (mobile == null || mobile.isBlank()) {</b>
+<b class="nc">&nbsp;            throw new InvalidPhoneNumber(&quot;Mobile number is required&quot;);</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        if (nationality == Nationality.INDIAN) {</b>
+&nbsp;
+<b class="nc">&nbsp;            if (!mobile.matches(&quot;^[6-9][0-9]{9}$&quot;)) {</b>
+<b class="nc">&nbsp;                throw new InvalidPhoneNumber(&quot;Invalid Indian mobile number&quot;);</b>
+&nbsp;            }
+&nbsp;
+<b class="nc">&nbsp;        } else if(nationality == Nationality.NRI){</b>
+&nbsp;
+<b class="nc">&nbsp;            if (!mobile.matches(&quot;^\\+[1-9][0-9]{7,14}$&quot;)) {</b>
+<b class="nc">&nbsp;                throw new InvalidPhoneNumber(&quot;Invalid international mobile number&quot;);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-03-21 12:37</div>
+</div>
+</body>
+</html>

@@ -9,10 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ParsedDocumentDTO {
-
     private String name;
-
     private String dob;
-
     private String documentNumber;
 }

@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > EligibilityService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.bank.loan.eligibility_service.service</a>
+</div>
+
+<h1>Coverage Summary for Class: EligibilityService (com.bank.loan.eligibility_service.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">EligibilityService$MockitoMock$v3QO31BX</td>
+  </tr>
+  <tr>
+    <td class="name">EligibilityService$MockitoMock$v3QO31BX$auxiliary$xffKhww1</td>
+  </tr>
+  <tr>
+    <td class="name">EligibilityService$MockitoMock$v3QO31BX$auxiliary$Y53JtaTU</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.bank.loan.eligibility_service.service;
+&nbsp;
+&nbsp;import com.bank.loan.eligibility_service.dto.EligibilityRequestDTO;
+&nbsp;import com.bank.loan.eligibility_service.dto.EligibilityResponseDTO;
+&nbsp;import com.bank.loan.eligibility_service.entity.LoanEligibility;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+&nbsp;public interface EligibilityService {
+&nbsp;    EligibilityResponseDTO checkEligibility(EligibilityRequestDTO request);
+&nbsp;
+&nbsp;
+&nbsp;    List&lt;LoanEligibility&gt; getAllEligibility();
+&nbsp;
+&nbsp;    LoanEligibility getEligibilityById(Long id);
+&nbsp;
+&nbsp;    void deleteEligibility(Long id);
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-03-21 12:37</div>
+</div>
+</body>
+</html>
